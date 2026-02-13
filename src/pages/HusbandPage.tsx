@@ -3,10 +3,10 @@ import FloatingHearts from "@/components/FloatingHearts";
 import PhotoFrame from "@/components/PhotoFrame";
 import ValentineInteraction from "@/components/ValentineInteraction";
 
-const placeholderPhotos = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
+const photos = [
+  { src: "/images/couple-europe.jpeg", alt: "Us in Europe" },
+  { src: "/images/couple-orchard.jpeg", alt: "Us at the orchard" },
+  { src: "/images/family-birthday.jpeg", alt: "Birthday celebration" },
 ];
 
 const HusbandPage = () => {
@@ -22,7 +22,7 @@ const HusbandPage = () => {
           transition={{ duration: 1 }}
         >
           <PhotoFrame
-            src="/placeholder.svg"
+            src="/images/couple-europe.jpeg"
             alt="Us together"
             className="w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 rounded-full"
           />
@@ -52,11 +52,11 @@ const HusbandPage = () => {
           Our Beautiful Moments
         </motion.h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {placeholderPhotos.map((src, i) => (
+          {photos.map((photo, i) => (
             <PhotoFrame
               key={i}
-              src={src}
-              alt={`Our memory ${i + 1}`}
+              src={photo.src}
+              alt={photo.alt}
               className="aspect-square"
               delay={i * 0.15}
             />
