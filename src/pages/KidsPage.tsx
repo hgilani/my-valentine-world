@@ -3,11 +3,13 @@ import FloatingHearts from "@/components/FloatingHearts";
 import PhotoFrame from "@/components/PhotoFrame";
 import ValentineInteraction from "@/components/ValentineInteraction";
 
-const placeholderPhotos = [
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
-  "/placeholder.svg",
+const photos = [
+  { src: "/images/mom-daughter-disney.jpeg", alt: "Disney day with my girl" },
+  { src: "/images/kid-camp.jpeg", alt: "Camp Shalom fun" },
+  { src: "/images/mom-daughter-hawaii.jpeg", alt: "Hawaii vibes" },
+  { src: "/images/mom-baby-kiss.jpeg", alt: "Sweet baby kisses" },
+  { src: "/images/mom-son-mural.jpeg", alt: "Kisses by the mural" },
+  { src: "/images/mom-kids-selfie.jpeg", alt: "My favorite humans" },
 ];
 
 const KidsPage = () => {
@@ -23,8 +25,8 @@ const KidsPage = () => {
           transition={{ duration: 1 }}
         >
           <PhotoFrame
-            src="/placeholder.svg"
-            alt="Family photo"
+            src="/images/mom-kids-selfie.jpeg"
+            alt="Me and my babies"
             className="w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 rounded-full"
           />
           <h1 className="text-5xl md:text-7xl font-script text-primary mb-4">
@@ -52,12 +54,12 @@ const KidsPage = () => {
         >
           My Favorite Little Humans 🧸
         </motion.h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-2 gap-6">
-          {placeholderPhotos.map((src, i) => (
+        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6">
+          {photos.map((photo, i) => (
             <PhotoFrame
               key={i}
-              src={src}
-              alt={`Family memory ${i + 1}`}
+              src={photo.src}
+              alt={photo.alt}
               className="aspect-square"
               delay={i * 0.15}
             />
